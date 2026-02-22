@@ -7280,8 +7280,7 @@ function Ud() {
     const t = window.location.href.split("?view?id=")[1];
     if (!t) return console.error("No URL provided in the query string."), null;
     try {
-        const originalUrl = decodeURIComponent(atob(t));
-        return `https://api.allorigins.win/raw?url=${encodeURIComponent(originalUrl)}`;
+        return `https://corsproxy.io/?url=${decodeURIComponent(atob(t))}`
     } catch (n) {
         return console.error("Failed to decode URL:", n), null
     }
